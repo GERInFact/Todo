@@ -1,6 +1,8 @@
 <template>
   <div>
-    <input v-model="currentTodo" @keydown.enter="addTodo()" placeholder="Add a todo" />
+    <md-field>
+      <md-input v-model="currentTodo" @keydown.enter="addTodo()" placeholder="Add a todo"></md-input>
+    </md-field>
     <ul class="todos">
       <li
         v-for="todo in todos"
@@ -8,12 +10,15 @@
         @dblclick="toggleEditMode(todo)"
         :class="{complete: todo.completed}"
       >
-        <input
-          v-model="todo.label"
-          @keydown.enter="confirmChange(todo)"
-          v-if="todo.isEditable"
-          placeholder="New label"
-        />
+        <md-field>
+          <md-input
+            v-model="todo.label"
+            @keydown.enter="confirmChange(todo)"
+            v-if="todo.isEditable"
+            placeholder="New label"
+          ></md-input>
+        </md-field>
+
         <h3>{{ todo.label }}</h3>
         <div>
           <button @click="removeTodo(todo.id)">🚮</button>
@@ -60,6 +65,6 @@ export default {
 
 <style>
 .complete {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 </style>
