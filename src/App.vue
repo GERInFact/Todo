@@ -26,10 +26,10 @@
         <h3>{{ todo.label }}</h3>
         <md-list-item>
           <md-button @click="removeTodo(todo.id)">
-            <md-icon class="md-primary">delete</md-icon>
+            <md-icon class="md-secondary">delete</md-icon>
           </md-button>
           <md-button @click="mark(todo)">
-            <md-icon class="md-accent md-raised">verified_user</md-icon>
+            <md-icon class="md-accent md-raised">done</md-icon>
           </md-button>
         </md-list-item>
       </md-list>
